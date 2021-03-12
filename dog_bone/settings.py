@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # used by the social media accounts to create a proper callback connecting via social media
+    'allauth',
+    'allauth.account', # handles login/logout/password reset
+    'allauth.socialaccount', # handles logging via social media accounts
+
 ]
 
 MIDDLEWARE = [
@@ -60,6 +65,9 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                # this is required by allauth, instructions: https://django-allauth.readthedocs.io/en/latest/installation.html
+                # it allows django to access http object in my templates, e.g request.user, request.email in templates
+
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -67,8 +75,28 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dog_bone.wsgi.application'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    # allows superusers to login to django
 
+    'allauth.account.auth_backends.AuthenticationBackend',
+    # allows my clients to login using the e-mail address
+]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# temporarily logs the confirmation emails to the console so I can get the confirmation links
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email' # tells allauth the authentication method we want to use
+ACCOUNT_EMAIL_REQUIRED = True # sets email requirement for the site registration
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # email is mandatory
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True # type email twice so there are no typos
+ACCOUNT_USERNAME_MIN_LENGTH = 4 # username length
+LOGIN_URL = '/accounts/login/' # login url
+LOGIN_REDIRECT_URL = '/' # url redirection after login
+
+WSGI_APPLICATION = 'dog_bone.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
