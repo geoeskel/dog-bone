@@ -1,0 +1,820 @@
+[{
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001340155",
+        "name": "Royal Canin Maxi Adult",
+        "description": "Balanced dry food for large dogs (26-45kg) between the ages of 15 months and 5 years, designed to support a healthy immune system and smooth joint function, with extra large kibble and weight control.",
+        "price": 53.99,
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "https://shop-cdn-m.mediazs.com/bilder/royal/canin/maxi/adult/3/400/rc_shn_adultmaxi_mv_eretailkit__3.jpg",
+        "image": "rcma.jpg"
+    }
+}, {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001600425",
+        "name": "Royal Canin Maxi Adult 5+",
+        "description": "Complex dry food for large breed adult dogs (26-45kg) over the age of 5 years, with an adapted antioxidant complex to help maintain healthy cell structure in an exclusive kibble shape.",
+        "price": 58.99,
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "https://shop-cdn-m.mediazs.com/bilder/royal/canin/maxi/adult/6/400/rc_shn_adultmaxi5_mv_eretailkit__6.jpg",
+        "image": "rcma5.jpg"
+    }
+}, {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001730010",
+        "name": "Royal Canin Maxi Ageing 8+",
+        "description": "Balanced kibble specially designed for large breed senior dogs over the age of 8 years, with selected nutrients to help support healthy ageing and a beneficial antioxidant complex.",
+        "price": 205.99,
+        "category": 1,
+        "rating": 4.7,
+        "image_url": "https://shop-cdn-m.mediazs.com/bilder/royal/canin/maxi/ageing/7/400/rc_shn_ageingmaxi8_mv_eretailkit__7.jpg",
+        "image": "rcma8.jpg"
+    }
+}, {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001890157",
+        "name": "Royal Canin Maxi Starter Mother & Babydog",
+        "description": "Royal Canin Maxi Starter for pregnant and lactating dogs and puppies in the weaning phase up to two months, with Start Complex to build up natural defences and support optimal digestion.",
+        "price": 169.99,
+        "category": 1,
+        "rating": 3.0,
+        "image_url": "https://media.zooplus.com/bilder/1/200/rc_shn_puppy_maxi_starter_mother_babydog_shn_puppy_008_uk_english_1.jpg",
+        "image": "rcms.jpg"
+    }
+}, {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002111605",
+        "name": "Royal Canin Medium Adult",
+        "description": "Dry food for medium breed adult dogs (11-25kg) between the ages of 12 months and 7 years, designed to support strong natural immunity and digestive health, with an antioxidant complex.",
+        "price": 232.99,
+        "category": 1,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/8/200/rc_shn_adultmedium_mv_eretailkit__8.jpg",
+        "image": "rcmea.jpg"
+    }
+}, {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002260206",
+        "name": "Royal Canin Medium Adult 7+",
+        "description": "Balanced dry food specially tailored to meet the nutritional needs of medium sized dogs over 7 years old, supporting the immune system and healthy ageing with an antioxidant complex.",
+        "price": 30.99,
+        "category": 1,
+        "rating": 4.7,
+        "image_url": "https://media.zooplus.com/bilder/5/200/rc_shn_adultmedium7_mv_eretailkit__5.jpg",
+        "image": "rcmea7.jpg"
+    }
+}, {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002440521",
+        "name": "Royal Canin Medium Ageing 10+",
+        "description": "Delicious dry food for medium breed senior dogs over the age of 10 years, with an antioxidant complex to support healthy ageing, including vitamin E and omega-3 fatty acids in a special kibble.",
+        "price": 59.0,
+        "category": 1,
+        "rating": 4.4,
+        "image_url": "https://media.zooplus.com/bilder/6/200/rc_shn_ageingmedium10_mv_eretailkit__6.jpg",
+        "image": "rcmea10.jpg"
+    }
+}, {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002601115",
+        "name": "Wolf of Wilderness Adult Classic 6 x 300g",
+        "description": "Species appropriate wet dog food in trays - made with just one source of animal protein with berries and herbs. This grain-free food is based on the wolf's natural eating habits.",
+        "price": 16.99,
+        "category": 2,
+        "rating": 4.5,
+        "image_url": "https://media.zooplus.com/bilder/6/200/wow_highvalley_300gtray_1000px_6.jpg",
+        "image": "wac6x300.jpg"
+    }
+}, {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002690715",
+        "name": "Wolf of Wilderness Adult Classic 6 x 400g",
+        "description": "Species appropriate wet dog food with meat and offal from 1 source of animal protein, enriched with fruits of the forest and wild herbs. This wet food is based on the wolf's natural eating habits.",
+        "price": 29.99,
+        "category": 2,
+        "rating": 4.7,
+        "image_url": "https://media.zooplus.com/bilder/0/200/wow_classic_blackrocks_400g_1000px_0.jpg",
+        "image": "wac6x400.jpg"
+    }
+}, {
+    "pk": 10,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002701115",
+        "name": "Wolf of Wilderness Adult Classic 6 x 800g",
+        "description": "A complete, grain-free premium wet dog food, inspired by the wolf's natural eating habits. This food contains only one source of animal protein & is enriched with fruits of the forest and wild herbs.",
+        "price": 53.99,
+        "category": 2,
+        "rating": 4.4,
+        "image_url": "https://media.zooplus.com/bilder/9/200/wow_classic_wideacres_800g_1000px_9.jpg",
+        "image": "wac6x800.jpg"
+    }
+}, {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002761055",
+        "name": "HUNTER Salmon Oil",
+        "description": "100% pure Norwegian salmon oil from HUNTER for cats and dogs, rich in precious omega 3 fatty acids for healthy skin and glossy fur, designed to be mixed with food.",
+        "price": 29.99,
+        "category": 3,
+        "rating": 3.0,
+        "image_url": "https://media.zooplus.com/bilder/1/200/26500_26501_pla_hunter_lachsoel_katzen_hunde_1.jpg",
+        "image": "hso.jpg"
+    }
+}, {
+    "pk": 12,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002820069",
+        "name": "Lintbells YuMOVE Joint Supplement for Dogs",
+        "description": "Keep your dog’s joints healthy and mobile with omega-3 & natural chondroitin from green-lipped mussels, combined in this YuMOVE nutritional supplement to promote cartilage health and mobility.",
+        "price": 19.99,
+        "category": 3,
+        "rating": 4.6,
+        "image_url": "https://media.zooplus.com/bilder/3/200/1615827369506_1_3.jpg",
+        "image": "ljs.jpg"
+    }
+}, {
+    "pk": 13,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002820147",
+        "name": "Lintbells YuDERM Moulting Dog Supplement",
+        "description": "Natural nutritional supplement with cold-pressed starflower and golden flax oils, helping to reduce moulting and support healthy skin, in an easy-to-use pump bottle.",
+        "price": 20.0,
+        "category": 3,
+        "rating": 3.2,
+        "image_url": "https://media.zooplus.com/bilder/4/200/moulting_dog_bottle_250ml_002__4_4.jpg",
+        "image": "lmds.jpg"
+    }
+}, {
+    "pk": 14,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002910572",
+        "name": "HUNTER Calcium Milk Bone",
+        "description": "Chewing fun with dental care effect, with important calcium from high quality raw material, without flavourings or colourings, for fresh breath and healthy teeth",
+        "price": 26.99,
+        "category": 3,
+        "rating": 4.7,
+        "image_url": "https://media.zooplus.com/bilder/2/200/25153_hunter_calcium_milk_b_2.jpg",
+        "image": "hcmb.jpg"
+    }
+}, {
+    "pk": 15,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002990740",
+        "name": "140 x Pedigree Dentastix / Fresh Megapack",
+        "description": "Light and long-lasting chewing fun, ideal for small, medium and large dogs. The special texture and active ingredients of Pedigree Dentastix help reduce plaque and tartar.",
+        "price": 48.99,
+        "category": 4,
+        "rating": 4.8,
+        "image_url": "https://media.zooplus.com/bilder/6/200/506141_6.jpg",
+        "image": "pds.jpg"
+    }
+}, {
+    "pk": 16,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003050248",
+        "name": "Rocco Chings Originals Chicken Breast Strips",
+        "description": "The favourite snack of every dog, and for good reason - these delicious strips of finest fillet meat are grain-free, low in fat and easy to digest. A true snack classic!",
+        "price": 35.99,
+        "category": 4,
+        "rating": 4.4,
+        "image_url": "https://media.zooplus.com/bilder/6/200/pla_rocco_chingsoriginals_chickenstrips_250g_1000x1000_6.jpg",
+        "image": "rco.jpg"
+    }
+}, {
+    "pk": 17,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003070787",
+        "name": "Rocco Chings Originals Duck Breast",
+        "description": "94% premium duck breast fillet, pre-portioned into handy strips for a chewy, meaty treat. Rocco Chings Originals Duck Breast are the ideal low-fat reward for your dog.",
+        "price": 33.99,
+        "category": 4,
+        "rating": 4.4,
+        "image_url": "https://media.zooplus.com/bilder/7/200/rocco_chings_original_duckbreaststrips_250g_1000x1000_7.jpg",
+        "image": "rcod.jpg"
+    }
+}, {
+    "pk": 18,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003090182",
+        "name": "Rocco Chings Originals Beef",
+        "description": "High quality, chewy treats with 91% beef - the perfect low-fat natural snack for your dog. Pre-portioned into tasty strips, in a resealable pouch.",
+        "price": 29.99,
+        "category": 4,
+        "rating": 4.8,
+        "image_url": "https://media.zooplus.com/bilder/4/200/pla_rocco_original_beef_1000x1000_4.jpg",
+        "image": "rcob.jpg"
+    }
+}, {
+    "pk": 19,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003090186",
+        "name": "Rocco Chings Originals Rabbit",
+        "description": "Tasty dog chews, made from easy to digest rabbit meat. These delicious dog treats are totally grain-free, low in fat and do not contain any artificial additives, preservatives or taste enhancers.",
+        "price": 30.99,
+        "category": 4,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/5/200/rocco_chings_original_rabbit_200g_1000x1000_5.jpg",
+        "image": "rcor.jpg"
+    }
+}, {
+    "pk": 20,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003161326",
+        "name": "Rocco Chings Steak Style",
+        "description": "Tasty dog snacks that look like little steaks, these Chings are made from chicken or duck and layered with cod, high-quality and delicious, try them now!",
+        "price": 20.99,
+        "category": 4,
+        "rating": 4.7,
+        "image_url": "https://shop-cdn-m.mediazs.com/bilder/rocco/chings/steak/style/9/400/chings_30x30_9.jpg",
+        "image": "rcos.jpg"
+    }
+}, {
+    "pk": 21,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003230723",
+        "name": "Royal Canin Babydog Milk",
+        "description": "Royal Canin Babydog Milk is an easily digestible, complete milk substitute for nursing puppies.",
+        "price": 20.99,
+        "category": 5,
+        "rating": 4.3,
+        "image_url": "https://media.zooplus.com/bilder/6/200/61036_PLA_rgb_Royal_Canin_Babydog_milk_2kg_6.jpg",
+        "image": "rcbm.jpg"
+    }
+}, {
+    "pk": 22,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003270936",
+        "name": "Applaws Puppy Small & Medium Breed - Chicken",
+        "description": "A complete, natural puppy food for small & medium breeds, which contains a high level of meat protein - 75% chicken. Made with only natural ingredients to encourage healthy puppy growth.",
+        "price": 36.99,
+        "category": 5,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/4/200/xxx_pla_applaws_chicken_puppy_ddf_15kg_4.jpg",
+        "image": "apsmc.jpg"
+    }
+}, {
+    "pk": 23,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003360384",
+        "name": "Concept for Life X-Large Puppy",
+        "description": "Tasty dry food for X-large breed puppies up to 8 months, also suitable for pregnant or lactating bitches. This kibble has adjusted energy & fat contents to ensure balanced growth.",
+        "price": 29.99,
+        "category": 5,
+        "rating": 4.8,
+        "image_url": "https://media.zooplus.com/bilder/4/200/76009_pla_concept_for_life_x_large_puppy_12kg_4.jpg",
+        "image": "clxp.jpg"
+    }
+}, {
+    "pk": 24,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003440111",
+        "name": "Orthopaedic Dog Bed",
+        "description": "Joint-kind dog bed with memory foam, designed to provide restful and pain-free sleep, with a high border and raised entry, with a separate plush inlay that can be washed, ideal for older dogs.",
+        "price": 52.0,
+        "category": 6,
+        "rating": 3.8,
+        "image_url": "https://media.zooplus.com/bilder/5/200/97669_pla_orthosofa_grau_fg_4820_5.jpg",
+        "image": "odb.jpg"
+    }
+}, {
+    "pk": 25,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003540313",
+        "name": "Oval Memory Foam Dog Bed",
+        "description": "Orthopaedic dog bed with memory foam mattress, with an additional soft blanket and a round shape featuring a raised border to lean on, machine washable at 30°C and ideal for senior dogs.",
+        "price": 106.99,
+        "category": 6,
+        "rating": 3.0,
+        "image_url": "https://media.zooplus.com/bilder/5/200/79217__memory_oval_grau_fg_6571_5.jpg",
+        "image": "omfdb.jpg"
+    }
+}, {
+    "pk": 26,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003560513",
+        "name": "Divan Wellness Dog Sofa",
+        "description": "A comfortable orthopaedic memory foam dog bed with removable covers in brown, distressed artificial leather. Very hygienic. Ideal for older dogs or those with joint issues.",
+        "price": 241.99,
+        "category": 7,
+        "rating": 4.4,
+        "image_url": "https://media.zooplus.com/bilder/5/200/333772_wellness_hundesofa_divan_antik_11_06_2013__dsc0307_5.jpg",
+        "image": "dwds.jpg"
+    }
+}, {
+    "pk": 27,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003560948",
+        "name": "HUNTER Round & Soft Dog Collar",
+        "description": "Dressage dog collar from HUNTER made from soft elk skin. The round finishing makes this collar particularly soft on your dog's coat.",
+        "price": 38.99,
+        "category": 7,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/9/200/24544_hunter_dressurhalsung_elch_roundsoft_dt_9.jpg",
+        "image": "collar#1.jpg"
+    }
+}, {
+    "pk": 28,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003570628",
+        "name": "HUNTER Vario Basic Ecco Sport Dog Collar",
+        "description": "Elegant dog collar from HUNTER, made from durable all-weather nylon. Tough yet comfortable and soft. Top quality at a great price.",
+        "price": 4.99,
+        "category": 7,
+        "rating": 4.3,
+        "image_url": "https://media.zooplus.com/bilder/4/200/_dsc8692_4.jpg",
+        "image": "collar#2.jpg"
+    }
+}, {
+    "pk": 29,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003620308",
+        "name": "JULIUS-K9 Power Harness",
+        "description": "The original by JULIUS-K9! This robust power harness was originally developed for professional use for emergency and police dogs.",
+        "price": 31.99,
+        "category": 7,
+        "rating": 4.6,
+        "image_url": "https://media.zooplus.com/bilder/0/200/65900_65901_65902_pla_juliusk9_idc_powergeschirr_0.jpg",
+        "image": "harness#1.jpg"
+    }
+}, {
+    "pk": 30,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003690115",
+        "name": "JULIUS-K9 IDC Power Harness",
+        "description": "Ergonomically dog harness that is water-repellent & scratch-resistant. Durable with gentle weight distribution and reflective elements for added safety. Material: polyester.",
+        "price": 32.99,
+        "category": 7,
+        "rating": 5.0,
+        "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP0113201417050002M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+        "image": "harness#2.jpg"
+    }
+}, {
+    "pk": 31,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003690116",
+        "name": "HUNTER Canadian Dog Lead",
+        "description": "High quality and resilient yet soft elk leather dog lead, can be adjusted to three lengths.",
+        "price": 49.99,
+        "category": 7,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/6/200/19269_hunter_f_hrleine_canadian_elk_dt_6.jpg",
+        "image": "lead#1.jpg"
+    }
+}, {
+    "pk": 32,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003780391",
+        "name": "flexi Giant XL Dog Lead",
+        "description": "This compact, high-viz lead is designed for large, strong dogs (+50kg). The retractable lead stretches to 8m and has a robust casing, a comfortable soft grip and easy to use controls.",
+        "price": 35.99,
+        "category": 7,
+        "rating": 4.8,
+        "image_url": "https://media.zooplus.com/bilder/1/200/69555_hundeleine_flexi_xl_8_m_neon_ret_xl_1.jpg",
+        "image": "lead#2.jpg"
+    }
+}, {
+    "pk": 33,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003790542",
+        "name": "KONG Classic",
+        "description": "The original KONG toy! An innovative dog toy made from natural rubber and designed to satisfy your dog's desire to chew. It can be filled with treats and bounces around in unpredictable directions.",
+        "price": 5.99,
+        "category": 8,
+        "rating": 4.5,
+        "image_url": "https://media.zooplus.com/bilder/2/200/46452_pla_kong_classic_hs_01_2.jpg",
+        "image": "toy#1.jpg"
+    }
+}, {
+    "pk": 34,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003831225",
+        "name": "KONG AirDog Squeakair Ball",
+        "description": "A sporty tennis ball toy with an integrated squeaker, perfect for playful and sporty dogs. With a robust felt fabric cover that is gentle on your dog's teeth as it chews. Perfect for Ball Launchers!",
+        "price": 3.99,
+        "category": 8,
+        "rating": 4.5,
+        "image_url": "https://media.zooplus.com/bilder/6/200/33765_pla_kong_tennisball_mit_quietschie_m_3er_hs_01_6.jpg",
+        "image": "toy#2.jpg"
+    }
+}, {
+    "pk": 35,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003861402",
+        "name": "Rubber Chicken Dog Toy",
+        "description": "A fun chicken toy for dogs that squeaks when your dog plays with it, for guaranteed fun! This squeaker toy is made of tough latex and is extremely resistant, perfect for young dogs!",
+        "price": 0.99,
+        "category": 8,
+        "rating": 4.7,
+        "image_url": "https://media.zooplus.com/bilder/6/200/60576_PLA_Hundespielzeug_Spiel_Huhn_mit_Squeaker_HS_6.jpg",
+        "image": "toy#3.jpg"
+    }
+}, {
+    "pk": 36,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003910638",
+        "name": "Trixie Dog Toy Sheep",
+        "description": "Adorable plush Trixie dog toy in the shape of a sheep with a certain something; long-limbed toy with hidden rattles and squeakers for unforgettable fun, suitable for puppies.",
+        "price": 4.99,
+        "category": 8,
+        "rating": 4.6,
+        "image_url": "https://media.zooplus.com/bilder/1/200/130499_trixie_spiel_schaf_1.jpg",
+        "image": "toy#4.jpg"
+    }
+}, {
+    "pk": 37,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003950574",
+        "name": "KONG Wild Knots Bears",
+        "description": "Super soft dog toy with a fun squeaker and minimal stuffing. The skeleton of the toy is made from knotted rope and then reinforced with plush for more durability.",
+        "price": 11.99,
+        "category": 8,
+        "rating": 4.0,
+        "image_url": "https://media.zooplus.com/bilder/6/200/485517_wild_knots_bears_bra_6.jpg",
+        "image": "toy#5.jpg"
+    }
+}, {
+    "pk": 38,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003950576",
+        "name": "HUNTER Stainless Steel Food Bowl",
+        "description": "High quality food bowl from stainless steel with HUNTER logo. Slip-free, hygienic and dishwasher-proof.",
+        "price": 10.99,
+        "category": 9,
+        "rating": 4.5,
+        "image_url": "https://media.zooplus.com/bilder/2/200/26948_hunter_edelstahlnapf_hs_02_2.jpg",
+        "image": "bowl#1.jpg"
+    }
+}, {
+    "pk": 39,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003960062",
+        "name": "HUNTER Melamine Dog Bowl",
+        "description": "Non-slip pet bowl in a timeless design, with a scratch-resistant melamine casing and a removable stainless steel insert that is dishwasher proof and 100% flavour neutral, shock resistant and durable.",
+        "price": 11.99,
+        "category": 9,
+        "rating": 3.8,
+        "image_url": "https://media.zooplus.com/bilder/3/200/26939_pla_hunter_melamin_napf_wei__hs_01_3.jpg",
+        "image": "bowl#2.jpg"
+    }
+}, {
+    "pk": 40,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003960682",
+        "name": "Trixie Ceramic & Wood Feeding Bowl Set",
+        "description": "This designed feeding bowl is made from lacquered wood with black ceramic dishes. The robust mounting has slip-proof rubber feet with silent silicone caps. It is easy to clean and dishwasher proof.",
+        "price": 21.99,
+        "category": 9,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/5/200/72201_pla_trixie_napf_set_keramik_holz_hs_02_5.jpg",
+        "image": "bowl#3.jpg"
+    }
+}, {
+    "pk": 41,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003960775",
+        "name": "Trixie Silicone Placemat",
+        "description": "Flexible placemat for using underneath your dog’s food bowl, made from robust silicone for a clean eating environment. It has a raised border and rounded shape, with anti-slip base.",
+        "price": 11.99,
+        "category": 9,
+        "rating": 3.0,
+        "image_url": "https://media.zooplus.com/bilder/6/200/83798_trixie_napfunterlage_silikon_hs_01_6.jpg",
+        "image": "bowl#4.jpg"
+    }
+}, {
+    "pk": 42,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003990736",
+        "name": "Double Door Crate",
+        "description": "A folding crate for dogs made from stable metal and with a removable zinc-coated base tray, with two doors for easy entrance and a carry handle, and available in a range of handy sizes.",
+        "price": 38.99,
+        "category": 10,
+        "rating": 4.7,
+        "image_url": "https://media.zooplus.com/bilder/1/200/17432_PLA_Transportkaefig_Double_Door_L109_FG_1_1.jpg",
+        "image": "crate#1.jpg"
+    }
+}, {
+    "pk": 43,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003990746",
+        "name": "Trixie Gulliver Transport Crate",
+        "description": "Ideal dog carrier for travelling by plane, train or car - IATA compliant - Made in Italy.",
+        "price": 65.99,
+        "category": 10,
+        "rating": 4.0,
+        "image_url": "https://media.zooplus.com/bilder/6/200/46459_6.jpg",
+        "image": "crate#2.jpg"
+    }
+}, {
+    "pk": 44,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004111503",
+        "name": "Deluxe Aluminium Folding Nylon Crate",
+        "description": "Premium folding dog crate has a light aluminium frame, 3 mesh doors and roof. Includes a cushion and window blinds so it is the ideal sleeping place at home or on the road. ",
+        "price": 60.99,
+        "category": 10,
+        "rating": 4.9,
+        "image_url": "https://media.zooplus.com/bilder/0/200/65564_pla_faltbare_nylonbox_alu_deluxe_hs_01_0.jpg",
+        "image": "crate#3.jpg"
+    }
+}, {
+    "pk": 45,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004230059",
+        "name": "JCPenney Home Ultra Soft Micro Fleece Blanket",
+        "description": "Super soft and undeniably cuddly, this micro-fleece blanket will keep you warm and comforted all year long.  brushed micro fleece for extra softness lightweight warmth anti-pilling treatment on one side Polyester. Washable. Imported. Twin: 60x90\" Full/Queen: 90x90\" King blanket: 108x90\"",
+        "price": 41.0,
+        "category": 2,
+        "rating": 4.6,
+        "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0716201503421212M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+        "image": "DP0716201503421212M.jpg"
+    }
+}, {
+    "pk": 46,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004310089",
+        "name": "Oster Premium Grooming Shears",
+        "description": "Give your dog a professional trim with these ergonomic scissors with rounded tips. These well-made scissors with sharp blades are perfect for extra safety around the face and sensitive areas.",
+        "price": 12.99,
+        "category": 11,
+        "rating": 4.5,
+        "image_url": "https://media.zooplus.com/bilder/5/200/58075_PLA_Oster_Premium_Schere_05_2013_5.jpg",
+        "image": "groom#1.jpg"
+    }
+}, {
+    "pk": 47,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004610254",
+        "name": "Trixie Easy Claw Pet Clippers",
+        "description": "The claw scissors from Trixie are the easy way to trim your pet's claws safely. They are suitable for small dogs.",
+        "price": 4.99,
+        "category": 11,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/3/200/2820_pla_trixie_krallenschere_hs03_3.jpg",
+        "image": "groom#2.jpg"
+    }
+}, {
+    "pk": 48,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004650050",
+        "name": "FURminator Short Hair S for Dogs",
+        "description": "For a glossy coat and less hair in your home: the FURminator reduces shedding by up to 90%, with convenient hair removal function; for small dogs up to 9kg with a coat shorter than 5cm.",
+        "price": 24.99,
+        "category": 11,
+        "rating": 3.0,
+        "image_url": "https://media.zooplus.com/bilder/1/200/92196_pla_furminator_hund_deshedding_s_kurzhaar_hs_03_1.jpg",
+        "image": "groom#3.jpg"
+    }
+}, {
+    "pk": 49,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004821375",
+        "name": "FURminator Short Hair M for Dogs",
+        "description": "FURminator Short Hair M for medium-sized dogs between 10 and 23kg with a coat shorter than 5cm, for a glossy coat and less hair in your home, reduces shedding by up to 90%.",
+        "price": 30.99,
+        "category": 11,
+        "rating": 4.0,
+        "image_url": "https://media.zooplus.com/bilder/4/200/92100_pla_furminator_hund_deshedding_m_langhaar_hs_01_4.jpg",
+        "image": "groom#4.jpg"
+    }
+}, {
+    "pk": 50,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004900522",
+        "name": "FURminator Short Hair L for Dogs",
+        "description": "FURminator Short Hair L for large dogs between 23 and 40kg with a coat shorter than 5cm, for a glossy coat and less hair in your home, reduces shedding by up to 90%, with hair removal function.",
+        "price": 36.99,
+        "category": 11,
+        "rating": 4.6,
+        "image_url": "https://media.zooplus.com/bilder/7/200/92101_pla_furminator_hund_deshedding_l_kurzhaar_hs_01_7.jpg",
+        "image": "groom#5.jpg"
+    }
+}, {
+    "pk": 51,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004910158",
+        "name": "Advance Atopic Care Shampoo",
+        "description": "A special dog shampoo with triple effect, thanks to a combination of aloe vera, collagen and olive leaf extract. It helps to renew and regenerate fur and protect against irritation.",
+        "price": 19.99,
+        "category": 11,
+        "rating": 3.8,
+        "image_url": "https://media.zooplus.com/bilder/8/200/300_ml_11111111_8410650205694_cat_dog_8.jpg",
+        "image": "groom#6.jpg"
+    }
+}, {
+    "pk": 52,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004910477",
+        "name": "Trixie Neutral Shampoo",
+        "description": "Moisturising Trixie Neutral shampoo is suitable for all breeds of dogs. It is a very gentle shampoo which helps to maintain your pet's beautiful coat.",
+        "price": 8.99,
+        "category": 11,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/1/200/14827_PLA_Trixie_Neutral_Shampoo_1.jpg",
+        "image": "groom#7.jpg"
+    }
+}, {
+    "pk": 53,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004940703",
+        "name": "FURminator deShedding Ultra Premium Shampoo",
+        "description": "FURminator deShedding shampoo, hypoallergenic shampoo for dogs and cats for healthier skin and reduced hair loss - perfect supplement to the FURminator. Recommended by vets & professional groomers.",
+        "price": 13.99,
+        "category": 11,
+        "rating": 3.7,
+        "image_url": "https://media.zooplus.com/bilder/7/200/49046_pla_furminator_hs__8117940130048_7.jpg",
+        "image": "groom#8.jpg"
+    }
+}, {
+    "pk": 54,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004991006",
+        "name": "Norwegian Dog Pullover",
+        "description": "A lovely dog pullover in a Norwegian knit pattern. Treat your dog to this warm 100% cotton knit with a soft, cosy fleece lining, turtle neck and Velcro tapes and make a fashion statement this season.",
+        "price": 6.99,
+        "category": 12,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/5/200/norweger_hundepulli_45cm_fg_6007_grau_5.jpg",
+        "image": "fashion#1.jpg"
+    }
+}, {
+    "pk": 55,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004991162",
+        "name": "Klaus Dog Jumper",
+        "description": "Turtleneck dog jumper with a delightful festive motif, reading “HO HO HO” across your dog’s back and with a bauble design, extremely comfortable and made from a flexible, warm material.",
+        "price": 8.99,
+        "category": 12,
+        "rating": 2.5,
+        "image_url": "https://media.zooplus.com/bilder/7/200/113597_hundepullover_klaus_fg_1924_start_7.jpg",
+        "image": "fashion#2.jpg"
+    }
+}, {
+    "pk": 56,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005000046",
+        "name": "Dog Overall - Mint",
+        "description": "Functional dog overalls with mid-length sleeves to offer all-round protection against wet, cold and dirt. It is light and comfortable, with fleece filling and drawstring to ensure it can be adjusted.",
+        "price": 15.99,
+        "category": 13,
+        "rating": 3.9,
+        "image_url": "https://media.zooplus.com/bilder/9/200/73483_hundeoverall_mint_fg_1000px_2928_9.jpg",
+        "image": "coat#1.jpg"
+    }
+}, {
+    "pk": 57,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005070254",
+        "name": "Illume Nite Dog Coat",
+        "description": "A breathable, wind-proof, water repellent dog coat with high viz neon insert and reflecting strips. Make sure you and your dog are visible when out in the dark.",
+        "price": 6.0,
+        "category": 13,
+        "rating": 4.7,
+        "image_url": "https://media.zooplus.com/bilder/1/200/_dsc1480_1.jpg",
+        "image": "coat#2.jpg"
+    }
+}, {
+    "pk": 58,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005071145",
+        "name": "Microfibre Dog Coat",
+        "description": "A delightful microfibre bathrobe for dogs, light & absorbent to offer protection from getting cold. It has a click fastener on the back and openings for legs and tail. It is machine washable at 30°C.",
+        "price": 5.0,
+        "category": 13,
+        "rating": 4.3,
+        "image_url": "https://media.zooplus.com/bilder/9/200/75396_pla_microfaser_trockenmantel_fg_4567_start_9.jpg",
+        "image": "coat#3.jpg"
+    }
+}, {
+    "pk": 59,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005140282",
+        "name": "Dog Safety Vest",
+        "description": "A neon yellow vest for dogs with reflective strips and a 100% waterproof coating. Ensures high-visibility in rain, fog or at night and keeps your dog safe. Made of lightweight polyester.",
+        "price": 11.99,
+        "category": 13,
+        "rating": 4.0,
+        "image_url": "https://media.zooplus.com/bilder/6/200/99055_sicherheitsweste_aussie_mix_fg_4810_6.jpg",
+        "image": "coat#4.jpg"
+    }
+}, {
+    "pk": 60,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005200166",
+        "name": "Multi-Clicker Training Device",
+        "description": "The Multi-Clicker with adjustable volume and Clicker-Training instruction for a non-violent education of your dog.",
+        "price": 5.99,
+        "category": 14,
+        "rating": 4.4,
+        "image_url": "https://media.zooplus.com/bilder/0/200/94504_pla_coa_multi_clicker_hs_01_0.jpg",
+        "image": "accessory#1.jpg"
+    }
+}, {
+    "pk": 61,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005210241",
+        "name": "Trixie High Frequency Dog Whistle - With Frequency Protection",
+        "description": "Metal dog whistle - individually adjustable to a constant frequency for unambiguous commands.",
+        "price": 4.99,
+        "category": 14,
+        "rating": 2.5,
+        "image_url": "https://media.zooplus.com/bilder/2/200/2819_PLA_Trixie_Hochfrequenz_Hundepfeife__8_cm_2.jpg",
+        "image": "accessory#2.jpg"
+    }
+}, {
+    "pk": 62,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005280104",
+        "name": "Trixie Target Stick",
+        "description": "Stick with integrated clicker for effective training of all pets. Includes instructions. ",
+        "price": 3.99,
+        "category": 14,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/3/200/37835_PLA_trixie_target_stick_3.jpg",
+        "image": "accessory#3.jpg"
+    }
+}, {
+    "pk": 63,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005310360",
+        "name": "Fun & Sport Complete Dog Agility Course",
+        "description": "Four dog agility exercise units now in a cheaper saver pack! This saver pack set contains all 3 agility items.",
+        "price": 169.99,
+        "category": 7,
+        "rating": 5.0,
+        "image_url": "https://media.zooplus.com/bilder/4/200/1_131130_4.jpg",
+        "image": "accessory#4.jpg"
+    }
+}] 

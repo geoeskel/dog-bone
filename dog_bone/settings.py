@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.account', # handles login/logout/password reset
     'allauth.socialaccount', # handles logging via social media accounts
     'home', # access to created home app
+    'products', # created products app
 
 ]
 

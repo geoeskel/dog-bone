@@ -1,0 +1,105 @@
+[{
+    "pk": 1,
+    "model": "products.category",
+    "fields": {
+        "name": "dry_food",
+        "friendly_name": "Dry Food"
+    }
+}, {
+    "pk": 2,
+    "model": "products.category",
+    "fields": {
+        "name": "wet_food",
+        "friendly_name": "Wet Food"
+    }
+}, 
+{
+    "pk": 3,
+    "model": "products.category",
+    "fields": {
+        "name": "diet",
+        "friendly_name": "Dietary Food"
+    }
+}, {
+    "pk": 4,
+    "model": "products.category",
+    "fields": {
+        "name": "treats",
+        "friendly_name": "Treats"
+    }
+}, {
+    "pk": 5,
+    "model": "products.category",
+    "fields": {
+        "name": "puppy_food",
+        "friendly_name": "Puppy Food"
+    }
+}, {
+    "pk": 6,
+    "model": "products.category",
+    "fields": {
+        "name": "beds",
+        "friendly_name": "Beds"
+    }
+}, {
+    "pk": 7,
+    "model": "products.category",
+    "fields": {
+        "name": "leads_collars",
+        "friendly_name": "Leads & Collars"
+    }
+}, {
+    "pk": 8,
+    "model": "products.category",
+    "fields": {
+        "name": "toys",
+        "friendly_name": "Toys"
+    }
+}, {
+    "pk": 9,
+    "model": "products.category",
+    "fields": {
+        "name": "bowls",
+        "friendly_name": "Bowls"
+    }
+}, {
+    "pk": 10,
+    "model": "products.category",
+    "fields": {
+        "name": "crates",
+        "friendly_name": "Crates"
+    } 
+},
+{
+    "pk": 11,
+    "model": "products.category",
+    "fields": {
+        "name": "grooming",
+        "friendly_name": "Grooming"
+    }
+}, 
+{
+    "pk": 12,
+    "model": "products.category",
+    "fields": {
+        "name": "fashion",
+        "friendly_name": "Fashion"
+    }
+}, 
+{
+    "pk": 13,
+    "model": "products.category",
+    "fields": {
+        "name": "coats_jackets",
+        "friendly_name": "Coats & Jackets"
+    }
+}, 
+{
+    "pk": 14,
+    "model": "products.category",
+    "fields": {
+        "name": "accessiries",
+        "friendly_name": "Accessories"
+    }
+
+}] 
