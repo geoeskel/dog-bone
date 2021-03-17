@@ -2,6 +2,10 @@ from django.db import models
 
 # Category model (inherit from models.Model)
 class Category(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Categories'  # fixing spelling of the plural of category
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)  # friendly name is optional (null and blank = True)
 
