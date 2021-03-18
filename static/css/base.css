@@ -55,6 +55,16 @@ body {
     border: 1px solid black !important;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1; /* negative index maked sure that it sits behind all of the content */
+}
+
 /* Media Queries */
 
 /* Larger container on xl screens */
