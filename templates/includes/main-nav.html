@@ -16,12 +16,12 @@
                 Dog Food
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="food-link">
-                <a href="" class="dropdown-item">Dry Food</a>
-                <a href="" class="dropdown-item">Wet Food</a>
-                <a href="" class="dropdown-item">Specialist Diets</a>
-                <a href="" class="dropdown-item">Treats</a>
-                <a href="" class="dropdown-item">Puppy Food</a>
-                <a href="" class="dropdown-item">All Food</a>
+                <a href="{% url 'products' %}?category=dry_food" class="dropdown-item">Dry Food</a>
+                <a href="{% url 'products' %}?category=wet_food" class="dropdown-item">Wet Food</a>
+                <a href="{% url 'products' %}?category=diet" class="dropdown-item">Specialist Diets</a>
+                <a href="{% url 'products' %}?category=treats" class="dropdown-item">Treats</a>
+                <a href="{% url 'products' %}?category=puppy_food" class="dropdown-item">Puppy Food</a>
+                <a href="{% url 'products' %}?category=dry_food,wet_food,diet,treats,puppy_food" class="dropdown-item">All Food</a>
             </div>
         </li>
 
@@ -30,12 +30,12 @@
                 Dog Equipment
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="equipment-link">
-                <a href="" class="dropdown-item">Beds</a>
-                <a href="" class="dropdown-item">Leads &amp; Collars</a>
-                <a href="" class="dropdown-item">Toys</a>
-                <a href="" class="dropdown-item">Bowls</a>
-                <a href="" class="dropdown-item">Crates</a>
-                <a href="" class="dropdown-item">Grooming</a>                
+                <a href="{% url 'products' %}?category=beds" class="dropdown-item">Beds</a>
+                <a href="{% url 'products' %}?category=leads_collars" class="dropdown-item">Leads &amp; Collars</a>
+                <a href="{% url 'products' %}?category=toys" class="dropdown-item">Toys</a>
+                <a href="{% url 'products' %}?category=bowls" class="dropdown-item">Bowls</a>
+                <a href="{% url 'products' %}?category=crates" class="dropdown-item">Crates</a>
+                <a href="{% url 'products' %}?category=grooming" class="dropdown-item">Grooming</a>                
             </div>
         </li>
 
@@ -44,9 +44,9 @@
                 Dog Wear
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="wear-link">
-                <a href="" class="dropdown-item">Coats &amp; Jackets</a>
-                <a href="" class="dropdown-item">Fashion</a>
-                <a href="" class="dropdown-item">Accessories</a>
+                <a href="{% url 'products' %}?category=coats_jackets" class="dropdown-item">Coats &amp; Jackets</a>
+                <a href="{% url 'products' %}?category=fashion" class="dropdown-item">Fashion</a>
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item">Accessories</a>
             </div>
         </li>
     </ul>
