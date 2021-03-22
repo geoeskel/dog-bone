@@ -62,7 +62,14 @@ body {
     left: 0;
     position: fixed;
     background: white;
-    z-index: -1; /* negative index maked sure that it sits behind all of the content */
+    /* negative index maked sure that it sits behind all of the content */
+    z-index: -1; 
+}
+
+/* Colour changes when hovering over the category-badge bootstrap element */
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
 }
 
 /* Media Queries */
