@@ -8,30 +8,61 @@ from .models import Product, Category
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
+    # setting the query, categories, sort and direction to 'None' makes sure 
+    # we don't get an error when loading the page without a search term
+    # and the template is shown properly when not using any sorting
     products = Product.objects.all()
-    query = None  # setting the query to None makes sure we don't get an error when loading the page without a search term
-    categories = None # same as above
+    query = None                        
+    categories = None                  
+    sort = None          
+    direction = None
 
+    
     if request.GET:
+        # We check if 'sort' is in request.GET, then we set sort to 'none' 
+        # and to 'sortkey' (to apply lowercase to it for search and to preserve the original parameter),
+        # then we rename sprtkey to 'lower_name' if the user is sorting by name and annotate the list of products
+        # with a new name and check if the direction is descending to decide whether to reverse the order with '-'
+        # then we sort the products using '.order_by' model method
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)  # filtering the products to check if they are in specific categoty list
+            # filtering the products to check if they are in specific categoty list
+            products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "Enter search criteria")
+                messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)  # using Q function; we are checking if the name OR description equals the searched phrase. 'i' in front of 'contains' makes it case insensitive 
-            products = products.filter(queries)  # passing the queries to the filter method to filter the products
+            # using Q function; we are checking if the name OR description 
+            # equals the searched phrase. 'i' in front of 'contains' makes it case insensitive 
+            # and then we are passing the queries to the filter method in order to filter the products
+            queries = Q(name__icontains=query) | Q(description__icontains=query)   
+            products = products.filter(queries)
 
+        # we are returning the current sorting methodology to the template by using string formatting                            
+    current_sorting = f'{sort}_{direction}'
 
     context = {
+        # adding query to the context and returning the categories so we can use it in the template
         'products': products,
-        'search_term': query,  # adding query to the context
-        'current_categories': categories,  # returns the categories so we can use it in the template
+        'search_term': query,                                                       
+        'current_categories': categories,   
+        'current_sorting': current_sorting,                                        
     }
 
     return render(request, 'products/products.html', context)

@@ -4,20 +4,26 @@ from django.db import models
 class Category(models.Model):
 
     class Meta:
-        verbose_name_plural = 'Categories'  # fixing spelling of the plural of category
+        # fixing spelling of the plural of category
+        verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)  # friendly name is optional (null and blank = True)
+    # friendly name is optional (null and blank = True)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
-    def __str__(self):  # string name definition
+    # string name definition
+    def __str__(self):  
         return self.name
 
-    def get_friendly_name(self):  # returns friendly name if exists
+    # returns friendly name if exists
+    def get_friendly_name(self):  
         return self.friendly_name
 
 # Product model
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)  #foreign key to the category model, can be null in db and blank in forms, if category is deleted any item in this category will have NULL in the field instead of deleting the item
+    #foreign key to the category model, can be null in db and blank in forms, 
+    # if category is deleted any item in this category will have NULL in the field instead of deleting the item
+    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
