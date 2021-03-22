@@ -72,6 +72,20 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
+/* Sets the static width, height and position on the botton right of the screen  */
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Changed the cursor to pointer */
+.btt-link {
+    cursor: pointer;
+}
+
 /* Media Queries */
 
 /* Larger container on xl screens */
