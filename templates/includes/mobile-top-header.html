@@ -1,4 +1,5 @@
-<li class="list-inline-item"> <!-- Open search bar button -->
+<!-- Open search bar button -->
+<li class="list-inline-item"> 
     <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-search fa-lg"></i></div>
@@ -20,7 +21,8 @@
         </form>
     </div>
 </li>
-<li class="list-inline-item dropdown"> <!-- Open 'my account' dropdown menu' -->
+<!-- Open 'my account' dropdown menu' -->
+<li class="list-inline-item dropdown"> 
     <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
@@ -40,8 +42,9 @@
         {% endif %}
     </div>
 </li>
-<li class="list-inline-item"> <!-- Button to access the shopping bag -->
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="">
+<li class="list-inline-item">
+    <!-- Button to access the shopping bag --> 
+    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_basket' %}">
         <div class="text-center">
             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
             <p class="my-0">
