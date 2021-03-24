@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 
 # Create your views here.
 
@@ -51,3 +51,36 @@ def add_to_basket(request, item_id):
     request.session['basket'] = basket
     print(request.session['basket'])
     return redirect(redirect_url)
+
+
+    def update_basket(request, item_id):
+    """ Update product quantity in the shopping basket """
+
+    quantity = int(request.POST.get('quantity'))
+    #  Checking if product has a size in request.POST
+    # if yes, overrite the None with the value from request.POST
+    size = None
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+    # We create 'basket' variable
+    # to store the basket content in the browsing session
+    basket = request.session.get('basket', {})
+
+    # If the item quantity > 0, set the item quantity accordingly
+    # Otherwise, remove the item. If item has a size,
+    # we drill down the item dictionary, find the specific size
+    # and either set the size to the updated one or delete
+    # if submitted quantity is 0
+    if size:
+        if quantity > 0:
+            basket[item_id]['items_by_size'][size] = quantity
+        else:
+            del basket[item_id]['items_by_size'][size]
+    else:
+        if quantity > 0:
+            basket[item_id] = quantity
+        else:
+            basket.pop[item_id]
+
+    request.session['basket'] = basket
+    return redirect(reverse('view_basket'))

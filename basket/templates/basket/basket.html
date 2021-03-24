@@ -52,7 +52,7 @@
                                         <!-- Form, using POST method as we want to send to the server information about product in the shopping basket  -->
                                         <!-- Because we're using POST, we need to use csrf_token for the django cross-site forgery protection -->
                                         <!-- without the csrf_token, django won't allow us to submit a form -->
-                                        <form class="form update-form" method="POST" action="">
+                                        <form class="form update-form" method="POST" action="{% url 'update_basket' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
