@@ -12,7 +12,7 @@ def view_basket(request):
 # Once in the view, it picks the 'basket' variable (if exists)
 # or create if it doesn't and then adds the item to the basket
 # (or adds the quantity if the item already exists)
-# and then it overrites the 'bag' variable
+# and then it overrites the 'basket' variable
 # with the updated one from the session
 
 
