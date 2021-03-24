@@ -53,7 +53,7 @@
                             {% if product.has_size %}
                                 <div class="col-12">
                                     <p><strong>Size:</strong></p>
-                                    <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+                                    <select class="form-control rounded-1 w-50" name="product_size" id="id_product_size">
                                         <option value="1">1[kg]</option>
                                         <option value="5" selected>5[kg]</option>
                                         <option value="10">10[kg]</option>
@@ -73,14 +73,14 @@
 
                             <div class="col{% if product.has_size %}-12 mt-2{% endif %}">
                                 <!-- Back to the shop button -->
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-1 mt-5">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Back to the shop</span>
                                 </a>
                                 <!-- Add to basket button -->
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Basket">
+                                <input type="submit" class="btn btn-black rounded-1 text-uppercase mt-5" value="Add to Basket">
                             </div>
                             <!-- Hidden input, redirects the user to the same page after adding items to the basket -->
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
