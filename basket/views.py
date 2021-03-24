@@ -53,7 +53,7 @@ def add_to_basket(request, item_id):
     return redirect(redirect_url)
 
 
-    def update_basket(request, item_id):
+def update_basket(request, item_id):
     """ Update product quantity in the shopping basket """
 
     quantity = int(request.POST.get('quantity'))
