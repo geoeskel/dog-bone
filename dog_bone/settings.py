@@ -38,12 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites', # used by the social media accounts to create a proper callback connecting via social media
+    'django.contrib.sites',  # used by the social media accounts to create a proper callback connecting via social media
     'allauth',
-    'allauth.account', # handles login/logout/password reset
-    'allauth.socialaccount', # handles logging via social media accounts
-    'home', # access to created home app
-    'products', # created products app
+    'allauth.account',  # handles login/logout/password reset
+    'allauth.socialaccount',  # handles logging via social media accounts
+    'home',  # access to created home app
+    'products',  # created products app
     'basket'  # installed shopping basket app
 
 ]

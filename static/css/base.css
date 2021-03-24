@@ -37,6 +37,12 @@ body {
     color: white;
 }
 
+.btn-outline-black {
+    background: white;
+    color: black !important;  /* !important overrites the link colours for anchor elements */
+    border: 1px solid black;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,

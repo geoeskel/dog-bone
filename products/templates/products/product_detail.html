@@ -43,6 +43,37 @@
                         <small class="text-muted">No Rating</small>
                     {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
+                    <!-- Form, using POST method as we want to send to the server information about product in the shopping basket  -->
+                    <!-- Because we're using POST, we need to use csrf_token for the django cross-site forgery protection -->
+                    <!-- without the csrf_token, django won't allow us to submit a form -->
+                    <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12">
+                                <p class="mt-3"><strong>Amount:</strong></p>
+                                <div class="form-group w-50">
+                                    <div class="input-group">
+                                        <!-- User's selection for the amount of the item they want to purchase -->
+                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <!-- Back to the shop button -->
+                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Back to the shop</span>
+                                </a>
+                                <!-- Add to basket button -->
+                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Basket">
+                            </div>
+                            <!-- Hidden input, redirects the user to the same page after adding items to the basket -->
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
