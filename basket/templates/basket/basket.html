@@ -83,7 +83,7 @@
                                             </div>
                                         </form>
                                         <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Delete</small></a>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Delete</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.product.price }}</p>
@@ -136,7 +136,7 @@
     // Updating items quantity on click
     // Using '.click' to find the most recently seen update up the DOM, 
     // store the form in a var 'form' and call the forms submit method
-    $('.update-link').click(function(e) {
+     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
@@ -144,13 +144,13 @@
     // Deleting item on click and reloading
     // Using '.click' to find the most recently seen update up the DOM,
     // post the data to url and when the responce comes back 
-    // from the server, reloads the page to update the bag
+    // from the server, reloads the page to update the basket
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
-        var url = `/basket/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+        var size = $(this).data('product_size');
+        var url = `/basket/delete/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
 
         $.post(url, data)
          .done(function() {

@@ -21,7 +21,7 @@ def basket_contents(request):
             product = get_object_or_404(Product, pk=item_id)
             total += item_data * product.price
             product_count += item_data
-            # List of bag items dictionary containing item id,
+            # List of basket items dictionary containing item id,
             # amount of items and the product object (product image, etc.)
             basket_items.append({
                 'item_id': item_id,

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponse
 
 # Create your views here.
 
@@ -76,11 +76,42 @@ def update_basket(request, item_id):
             basket[item_id]['items_by_size'][size] = quantity
         else:
             del basket[item_id]['items_by_size'][size]
+            if not basket[item_id]['items_by_size']:
+                basket.pop(item_id)
     else:
         if quantity > 0:
             basket[item_id] = quantity
         else:
-            basket.pop[item_id]
+            basket.pop(item_id)
 
     request.session['basket'] = basket
     return redirect(reverse('view_basket'))
+
+
+def delete_from_basket(request, item_id):
+    """ Delete product from the shopping basket """
+
+    #  Checking if product has a size in request.POST
+    # if yes, overrite the None with the value from request.POST
+    try:
+        size = None
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
+        # We create 'basket' variable
+        # to store the basket content in the browsing session
+        basket = request.session.get('basket', {})
+
+        # If item with size is in the basket, we want to delete
+        # this size key from the basket
+        # If 'items_by_size' is empty, we want to remove the
+        # entire 'item_id' to avoid having empty item dictionaries
+        # If item has no size, remove the 'item_id'
+        # Afterward, we want to return httpresponse 200
+        # (item successfully removed)
+        basket.pop(item_id)
+
+        request.session['basket'] = basket
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)
