@@ -124,6 +124,7 @@
 
     {% if messages %}
         <div class="message-container">
+            <!-- Using django messages framework levels (40-error, 30-warning, 25-success) -->
             {% for message in messages %}
                 {% with message.level as level %}
                     {% if level == 40 %}
