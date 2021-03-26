@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'products',  # created products app
     'basket',  # installed shopping basket app
     'checkout',  # installed checkout app
+    'crispy_forms',
 
 ]
 
@@ -60,6 +61,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'dog_bone.urls'
+
+# Crispy forms template
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+]
 
 TEMPLATES = [
     {
@@ -81,6 +87,11 @@ TEMPLATES = [
                 # adding our context processor created in basket\templates
                 'basket.contexts.basket_contents',
             ],
+            # All the tags we want available in all our templates by default
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
