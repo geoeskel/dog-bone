@@ -65,8 +65,6 @@ ROOT_URLCONF = 'dog_bone.urls'
 # Crispy forms template
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-]
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -85,6 +83,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # adding our context processor created in basket\templates
+                'django.template.context_processors.media', # Django media processor
                 'basket.contexts.basket_contents',
             ],
             # All the tags we want available in all our templates by default
