@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',  # handles logging via social media accounts
     'home',  # access to created home app
     'products',  # created products app
-    'basket'  # installed shopping basket app
-    'checkout'  # installed checkout app
+    'basket',  # installed shopping basket app
+    'checkout',  # installed checkout app
 
 ]
 
