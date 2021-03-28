@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
@@ -8,8 +9,37 @@ from products.models import Product
 from basket.contexts import basket_contents
 
 import stripe
+import json
 
 # Create your views here.
+
+@require_POST
+#    Check in the webhook if the user has checked the info box
+#    1.  Make a 'POST' request to payment method view
+#    2.  Pass it the 'client_secret' from the payment intent
+#    3.  Split that at the word 'secret', the first part of it is
+#        the 'PaymentIntent' id
+#    4.  Set up stripe with the 'secret_key' so the 'PaymentIntent'
+#        can be modified
+#    5.  Add a JSON dump of their shopping basket
+#    6.  Return 'HttpResponse' with the status of 200 (OK)
+#    7.  If errors, display a message to the client
+
+
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'basket': json.dumps(request.session.get('basket', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Your payment cannot be \
+            processed at the moment. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -31,14 +61,14 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
-        """ 
-            1. 	We get the 'product_id' out of the basket.
-            2. 	If its value is an integer we know we're working with an item that doesn't have sizes
-                so the quantity will be the 'item_data'.
-            3. 	If the item has sizes, iterate through each size and create a 'line_item' accordingly.
-            4. 	If a product isn't found, add an error message.
-            5. 	Delete the empty order and return the user to the shopping basket page.
-        """
+        
+        #   1.We get the 'product_id' out of the basket.
+        #   2.If its value is an integer we know we're working with an item that doesn't have sizes
+        #   so the quantity will be the 'item_data'.
+        #   3.If the item has sizes, iterate through each size and create a 'line_item' accordingly.
+        #   4.If a product isn't found, add an error message.
+        #   5.Delete the empty order and return the user to the shopping basket page.
+        
         if order_form.is_valid():
             # Needed for the order number to be passed as an argument
             order = order_form.save()
@@ -117,15 +147,15 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """
-    Successful checkout
-    1.  Check if the user wants to save their information
-        by getting that from the session
-    2.  Use the 'order_number' to create the 'order'
-    3.  Send the 'order' to the template
-    4.  Display the success message to the user
-    5.  Delete user's shopping basket from the session
-    """
+    
+    #   Successful checkout
+    #   1.  Check if the user wants to save their information
+    #   by getting that from the session
+    #   2.  Use the 'order_number' to create the 'order'
+    #   3.  Send the 'order' to the template
+    #   4.  Display the success message to the user
+    #   5.  Delete user's shopping basket from the session
+    
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \

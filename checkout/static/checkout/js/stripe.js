@@ -56,43 +56,91 @@ card.addEventListener('change', function (event) {
 /*  Handling the submit function (listener)
 1.  Prevent default action (POST)
 2.  Disable card update to prevent multiple submissions
-3.  Execute the 'confirmCardPayment' method
-4.  Call the 'confirmCardPayment' method
-5.  Provide the card to Stripe
-6.  Execute the 'function(result)'
-7.  If 'errorDiv', show it in card div and allow user to resubmit card
-8.  If status is success, submit the form */
+3.  Create vars to capture form data
+4.  Post the captured data to 'cache_checkout_data' view
+5.  The view updates the 'PaymentIntent' and returns 200 respoonse 
+6.  Execute the 'confirmCardPayment' method from Stripe
+7.  Call the 'confirmCardPayment' method from Stripe
+8.  Provide the card to Stripe
+9.  Execute the 'function(result)'
+10. If 'errorDiv', show it in card div and allow user to resubmit card
+11. If status is success, submit the form 
+12. If anything goes wrong posting the data to the view, reload the page
+    and display the error without charging the user */
+
 var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
-    /* Trigger the overlay, fade out the form when submit clicked */
+    // Trigger the overlay, fade out the form when submit clicked
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-            card: card,
-        }
-    }).then(function(result) {
-        if (result.error) {
-            var errorDiv = document.getElementById('card-errors');
-            var html = `
-                <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-                </span>
-                <span>${result.error.message}</span>`;
-            $(errorDiv).html(html);
-            /* Trigger the overlay, fade out the form when submit clicked */
-            $('#payment-form').fadeToggle(100);
-            $('#loading-overlay').fadeToggle(100);
-            card.update({ 'disabled': false});
-            $('#submit-button').attr('disabled', false);            
-        } else {
-            if (result.paymentIntent.status === 'succeeded') {
-                form.submit();
+
+    var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    // From using {% csrf_token %} in the form
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    var url = '/checkout/cache_checkout_data/';
+
+    $.post(url, postData).done(function () {
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card,
+                // Client's billing information. We take it from the form and trimm the whitespace
+                billing_details: {
+                        name: $.trim(form.full_name.value),
+                        phone: $.trim(form.phone_number.value),
+                        email: $.trim(form.email.value),
+                        address:{
+                            line1: $.trim(form.street_address1.value),
+                            line2: $.trim(form.street_address2.value),
+                            city: $.trim(form.town_or_city.value),
+                            country: $.trim(form.country.value),
+                            state: $.trim(form.county.value),
+                        }
+                }
+            },
+            // Client's shipping information. We take it from the form and trimm the whitespace 
+            shipping: {
+                    name: $.trim(form.full_name.value),
+                    phone: $.trim(form.phone_number.value),
+                    address: {
+                        line1: $.trim(form.street_address1.value),
+                        line2: $.trim(form.street_address2.value),
+                        city: $.trim(form.town_or_city.value),
+                        country: $.trim(form.country.value),
+                        postal_code: $.trim(form.postcode.value),
+                        state: $.trim(form.county.value),
+                    }
+                },
+        }).then(function(result) {
+            if (result.error) {
+                var errorDiv = document.getElementById('card-errors');
+                var html = `
+                    <span class="icon" role="alert">
+                    <i class="fas fa-times"></i>
+                    </span>
+                    <span>${result.error.message}</span>`;
+                $(errorDiv).html(html);
+                // Trigger the overlay, fade out the form when submit clicked 
+                $('#payment-form').fadeToggle(100);
+                $('#loading-overlay').fadeToggle(100);
+                card.update({ 'disabled': false});
+                $('#submit-button').attr('disabled', false);            
+            } else {
+                if (result.paymentIntent.status === 'succeeded') {
+                    form.submit();
+                }
             }
-        }
-    });
+        });
+    }).fail(function () {
+        // Page reload
+        location.reload();
+    })
 });

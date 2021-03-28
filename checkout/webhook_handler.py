@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 
 
-class StripeWH_Handler:
+class Stripe_Webhook_Handler:
     # Stripe Webhooks
 
     # '__init__' is a setup method called each time an instance of a class
@@ -19,6 +19,10 @@ class StripeWH_Handler:
 
     # Payment_intent.succeeded wh
     def handle_payment_intent_succeeded(self, event):
+
+        # Print out 'PaymentIntent' from stripe
+        intent = event.data.object
+        print(intent)
 
         # Takes the event stripe is sending us and returns an HTTP response
         return HttpResponse(
