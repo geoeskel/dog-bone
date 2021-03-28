@@ -124,7 +124,7 @@ def checkout_success(request, order_number):
     2.  Use the 'order_number' to create the 'order'
     3.  Send the 'order' to the template
     4.  Display the success message to the user
-    5.  Delete user's shopping bag from the session
+    5.  Delete user's shopping basket from the session
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
