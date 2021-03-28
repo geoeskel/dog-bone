@@ -71,7 +71,14 @@ def checkout(request):
         
         if order_form.is_valid():
             # Needed for the order number to be passed as an argument
-            order = order_form.save()
+            # Prevent multiple save events from being executed
+            order = order_form.save(commit=False)
+            # Split at the word 'secret', the first part of it is
+            # the 'PaymentIntent' id
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_basket = json.dumps(basket)
+            order.save()
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
