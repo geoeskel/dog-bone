@@ -37,6 +37,16 @@
     border: 1px solid #000;
 }
 
+select, 
+select option {
+    color: black;
+}
+
+select:invalid, 
+select option[value=""] {
+    color: gray !important;
+}
+
 /* Loading icon CSS */
 #loading-overlay {
 	display: none;
