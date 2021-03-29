@@ -10,16 +10,16 @@ from .models import Product, Category
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    # setting the query, categories, sort and direction to 'None' makes sure 
+    # setting the query, categories, sort and direction to 'None' makes sure
     # we don't get an error when loading the page without a search term
     # and the template is shown properly when not using any sorting
     products = Product.objects.all()
-    query = None                        
-    categories = None                  
-    sort = None          
+    query = None
+    categories = None
+    sort = None
     direction = None
 
-    
+
     if request.GET:
         # We check if 'sort' is in request.GET, then we set sort to 'none' 
         # and to 'sortkey' (to apply lowercase to it for search and to preserve the original parameter),
@@ -55,25 +55,25 @@ def all_products(request):
             # using Q function; we are checking if the name OR description 
             # equals the searched phrase. 'i' in front of 'contains' makes it case insensitive 
             # and then we are passing the queries to the filter method in order to filter the products
-            queries = Q(name__icontains=query) | Q(description__icontains=query)   
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
-        # we are returning the current sorting methodology to the template by using string formatting                            
+        # we are returning the current sorting methodology to the template by using string formatting
     current_sorting = f'{sort}_{direction}'
 
     context = {
         # adding query to the context and returning the categories so we can use it in the template
         'products': products,
-        'search_term': query,                                                       
-        'current_categories': categories,   
-        'current_sorting': current_sorting,                                        
+        'search_term': query,
+        'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details """
+    #   A view to show individual product details
 
     product = get_object_or_404(Product, pk=product_id)
 
