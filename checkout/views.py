@@ -6,12 +6,15 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from basket.contexts import basket_contents
 
 import stripe
 import json
 
 # Create your views here.
+
 
 @require_POST
 #    Check in the webhook if the user has checked the info box
@@ -106,20 +109,19 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_basket'))
 
-            """
-            Check if the user wants to save their profile information to the
-            session. Then, redirect them to a 'checkout_success' page.
-            """
+            #   Check if the user wants to save their profile information to the
+            #   session. Then, redirect them to a 'checkout_success' page.
+
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
-        """
-        Getting basket from the session, if nothins in the basket,
-        print error message. Afterwards, redirect ot products page
-        """
+
+        #   Getting basket from the session, if nothins in the basket,
+        #   print error message. Afterwards, redirect ot products page
+
         basket = request.session.get('basket', {})
         if not basket:
             messages.error(request, "There's nothing in your basket at the moment")
@@ -135,11 +137,32 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
+        #   Check if the user is authenticated
+        #   If yes, get their profile and use
+        #   the initial parameter on the order form
+        #   to fill all its fields with the relevant information
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                    'town_or_city': profile.default_town_or_city,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'county': profile.default_county,
+                })
+            #   If the user is not authenticated, render an empty form
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            # Create instance of the order form and render it out
+            order_form = OrderForm()
 
-        # Create instance of the order form and render it out
-        order_form = OrderForm()
-
-    # Alert message if you forgot to set STRIPE_PUBLIC_KEY    
+    # Alert message if you forgot to set STRIPE_PUBLIC_KEY
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is not found')
 
@@ -165,6 +188,31 @@ def checkout_success(request, order_number):
     
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
+
+        # Save user info
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_county': order.county,
+            }
+            #   An instance of the user profile form, using the profile data
+            #   If the form is valid - save it.
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. We will send \
         you a confirmation email to {order.email}.')
