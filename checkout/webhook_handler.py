@@ -2,9 +2,11 @@ from django.http import HttpResponse
 
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
 
 import json
 import time
+
 
 class Stripe_Webhook_Handler:
     # Stripe Webhooks
@@ -36,16 +38,34 @@ class Stripe_Webhook_Handler:
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-        # To ensure the data is in the same form as what we want in our database,
-        # replace any empty strings in the shipping details with 'None'
+        #   To ensure the data is in the same form as what we want in our database,
+        #   replace any empty strings in the shipping details with 'None'
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
-        
-        # 1. Check if the order exists already
-        # 2. If yes, return a response and say all is good
-        # 3. If not, create it here in the webhook
 
+        #   Update profile information if 'save_info' was checked
+        #   1. Get the username from 'intent.metadata.username'
+        #   2. If the username isn't anonymous user, the user is authenticated
+        #   3. If they are authenticated, get 'UserProfile' using 'user__username'
+        #   4. Then, update the profile's shipping details  
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_phone_number = shipping_details.phone
+                profile.default_country = shipping_details.address.country
+                profile.default_postcode = shipping_details.address.postal_code
+                profile.default_town_or_city = shipping_details.address.city
+                profile.default_street_address1 = shipping_details.address.line1
+                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_county = shipping_details.address.state
+                profile.save()
+
+        #   1. Check if the order exists already
+        #   2. If yes, return a response and say all is good
+        #   3. If not, create it here in the webhook
         order_exists = False
         #   Preventing the order being added to the database twice
         #   if the view is slow or hasn't created the order by the time
