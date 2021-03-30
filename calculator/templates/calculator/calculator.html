@@ -25,10 +25,19 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
-                <p class="text-muted">Dog Breed Food Calculator</p>
-                
-                
-            </div>           
+                <p class="text-muted">Dog Breed Food Calculator</p>                
+            </div>
+            <div class="row">
+            <div class="col-12 col-md-6">
+                <form class="form mb-2">                    
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a class="btn btn-outline-black rounded-1" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn-black rounded-1" type="submit">Add Product</button>
+                    </div>
+                </form>
+            </div>            
+        </div>        
         </div>
 {% endblock %}
 
