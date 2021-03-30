@@ -13,18 +13,66 @@
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-title mb-2">
-                    <strong>Welcome to Dog & Bone</strong></h1>
+                <h1 class="antext display-4 logo-font text-title mb-2">
+                    <span class="text-wrapper">
+                        <span class="line line1"></span>
+                        <span class="letters letters-left">DOG</span>
+                        <span class="letters ampersand">&amp;</span>
+                        <span class="letters letters-right">BONE</span>
+                        <span class="line line2"></span>
+                    </span>    
+                </h1>
                     <h2 class="text-subtitle mb-3">from Vom Geolupa</h2>                
-                <h4 class="text-title mb-4">
+                <h4 class="text-subtitle mb-4">
                     Your friendly, neighbouhood dog shop.
                 </h4>
                 <div clayy="my-8">
                     <h4>
-                       <a href="{% url 'products' %}" class="shop-now-button btn-lg rounded-1 text-uppercase py-1">Shop here</a> 
+                       <a href="{% url 'products' %}" class="shop-now-button btn-lg rounded-1 text-uppercase py-2">Shop here</a> 
                     </h4>
                 </div>
             </div>
         </div>
     </div>
 {% endblock %}
+
+{% block postloadjs %}    
+<script>
+    anime.timeline({loop: false})
+  .add({
+    targets: '.antext .line',
+    opacity: [0.5,1],
+    scaleX: [0, 1],
+    easing: "easeInOutExpo",
+    duration: 700
+  }).add({
+    targets: '.antext .line',
+    duration: 600,
+    easing: "easeOutExpo",
+    translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+  }).add({
+    targets: '.antext .ampersand',
+    opacity: [0,1],
+    scaleY: [0.5, 1],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  }).add({
+    targets: '.antext .letters-left',
+    opacity: [0,1],
+    translateX: ["0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=300'
+  }).add({
+    targets: '.antext .letters-right',
+    opacity: [0,1],
+    translateX: ["-0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  });
+  </script>
+{% endblock %}
+
+
