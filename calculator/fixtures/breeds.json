@@ -1,0 +1,407 @@
+[{
+    "pk": 1,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "afador",
+        "friendly_name": "Afador"
+    }
+}, {
+    "pk": 2,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "akita",
+        "friendly_name": "Akita"
+    }
+}, {
+    "pk": 3,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "alaskan_malamute",
+        "friendly_name": "Alaskan Malamute"
+    }
+}, {
+    "pk": 4,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "american_bulldog",
+        "friendly_name": "American Bulldog"
+    }
+}, {
+    "pk": 5,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "american_foxhound",
+        "friendly_name": "American Foxhound"
+    }
+}, {
+    "pk": 6,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "auggie",
+        "friendly_name": "Auggie"
+    }
+}, {
+    "pk": 7,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "australian_shepherd",
+        "friendly_name": "Australian Shepherd"
+    }
+}, {
+    "pk": 8,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "basset_hound",
+        "friendly_name": "Basset Hound"
+    }
+}, {
+    "pk": 9,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "beagle",
+        "friendly_name": "Beagle"
+    }
+}, {
+    "pk": 10,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "bearded_collie",
+        "friendly_name": "Bearded Collie"
+    }
+}, {
+    "pk": 11,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "belgian_malinois",
+        "friendly_name": "Belgian Malinois"
+    }
+}, {
+    "pk": 12,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "bloodhound",
+        "friendly_name": "Bloodhound"
+    }
+}, {
+    "pk": 13,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "border_collie",
+        "friendly_name": "Border Collie"
+    }
+}, {
+    "pk": 14,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "borzoi",
+        "friendly_name": "Borzoi"
+    }
+}, {
+    "pk": 15,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "bull_terrier",
+        "friendly_name": "Bull Terrier"
+    }
+}, {
+    "pk": 16,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "bulldog",
+        "friendly_name": "Bulldog"
+    }
+}, {
+    "pk": 17,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "cardigan_welsh_corgi",
+        "friendly_name": "Cardigan Welsh Corgi"
+    }
+}, {
+    "pk": 18,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "chihuahua",
+        "friendly_name": "Chihuahua"
+    }
+}, {
+    "pk": 19,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "chow_chow",
+        "friendly_name": "Chow Chow"
+    }
+}, {
+    "pk": 20,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "cocker_spaniel",
+        "friendly_name": "Cocker Spaniel"
+    }
+}, {
+    "pk": 21,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "dachshund",
+        "friendly_name": "Dachshund"
+    }
+}, {
+    "pk": 22,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "doberman_pinscher",
+        "friendly_name": "Doberman Pinscher"
+    }
+}, {
+    "pk": 23,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "dutch_shepherd",
+        "friendly_name": "Dutch Shepherd"
+    }
+}, {
+    "pk": 24,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "english_foxhound",
+        "friendly_name": "English Foxhound"
+    }
+}, {
+    "pk": 25,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "english_setter",
+        "friendly_name": "English Setter"
+    }
+}, {
+    "pk": 26,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "fox_terrier",
+        "friendly_name": "Fox Terrier"
+    }
+}, {
+    "pk": 27,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "finnish_spitz",
+        "friendly_name": "Finnish Spitz"
+    }
+}, {
+    "pk": 28,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "french_bulldog",
+        "friendly_name": "French Bulldog"
+    }
+}, {
+    "pk": 29,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "german_longhaired_pointer",
+        "friendly_name": "German Longhaired Pointer"
+    }
+}, {
+    "pk": 30,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "german_pinscher",
+        "friendly_name": "German Pinscher"
+    }
+}, {
+    "pk": 31,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "german_shepherd_dog",
+        "friendly_name": "German Shepherd Dog"
+    }
+}, {
+    "pk": 32,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "golden_retriever",
+        "friendly_name": "Golden Retriever"
+    }
+}, {
+    "pk": 33,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "great_dane",
+        "friendly_name": "Great Dane"
+    }
+}, {
+    "pk": 34,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "greyhound",
+        "friendly_name": "Greyhound"
+    }
+}, {
+    "pk": 35,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "irish_wolfhound",
+        "friendly_name": "Irish Wolfhound"
+    }
+}, {
+    "pk": 36,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "jack_russell_terrier",
+        "friendly_name": "Jack Russell Terrier"
+    }
+}, {
+    "pk": 37,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "labrador_retriever",
+        "friendly_name": "Labrador Retriever"
+    }
+}, {
+    "pk": 38,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "mastiff",
+        "friendly_name": "Mastiff"
+    }
+}, {
+    "pk": 39,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "mutt",
+        "friendly_name": "Mutt"
+    }
+}, {
+    "pk": 40,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "newfoundland",
+        "friendly_name": "Newfoundland"
+    }
+}, {
+    "pk": 41,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "neapolitan_mastiff",
+        "friendly_name": "Neapolitan Mastiff"
+    }
+}, {
+    "pk": 42,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "papillon",
+        "friendly_name": "Papillon"
+    }
+}, {
+    "pk": 43,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "pharaoh_hound",
+        "friendly_name": "Pharaoh Hound"
+    }
+}, {
+    "pk": 44,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "pointer",
+        "friendly_name": "Pointer"
+    }
+}, {
+    "pk": 45,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "pomeranian",
+        "friendly_name": "Pomeranian"
+    }
+}, {
+    "pk": 46,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "poodle",
+        "friendly_name": "Poodle"
+    }
+}, {
+    "pk": 47,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "pug",
+        "friendly_name": "Pug"
+    }
+}, {
+    "pk": 48,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "puli",
+        "friendly_name": "Puli"
+    }
+}, {
+    "pk": 49,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "rottweiler",
+        "friendly_name": "Rottweiler"
+    }
+}, {
+    "pk": 50,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "saint_bernard",
+        "friendly_name": "Saint Bernard"
+    }
+}, {
+    "pk": 51,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "samoyed",
+        "friendly_name": "Samoyed"
+    }
+}, {
+    "pk": 52,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "scottish_terrier",
+        "friendly_name": "Scottish Terrier"
+    }
+}, {
+    "pk": 53,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "shiba_nu",
+        "friendly_name": "Shiba Inu"
+    }
+}, {
+    "pk": 54,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "shih_tzu",
+        "friendly_name": "Shih Tzu"
+    }
+}, {
+    "pk": 55,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "siberian_husky",
+        "friendly_name": "Siberian Husky"
+    }
+}, {
+    "pk": 56,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "staffy_bull_bullmastiff",
+        "friendly_name": "Staffy Bull Bullmastiff"
+    }
+}, {
+    "pk": 57,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "vizsla",
+        "friendly_name": "Vizsla"
+    }
+}, {
+    "pk": 58,
+    "model": "calculator.breeds",
+    "fields": {
+        "name": "yorkshire_terrier",
+        "friendly_name": "Yorkshire Terrier"
+    }
+},]
