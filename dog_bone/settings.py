@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'checkout',  # installed checkout app
     'crispy_forms',
     'profiles',
+    'calculator',  # installed calculator app
 
 ]
 
