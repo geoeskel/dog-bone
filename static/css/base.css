@@ -6,9 +6,20 @@ body {
     background: url('/media/home_background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
+    color: #B86428;
     font-family: 'Lato';
 }
+
+/* Navbar */
+.nav-link:hover {
+    color:#F2DDCA !important;
+    background: #50200C;
+}
+.dropdown-item:hover {
+    color:#F2DDCA !important; 
+    background: #50200C !important;
+}
+
 
 /* from Bulma */
 .icon {
@@ -28,27 +39,27 @@ body {
 }
 
 .shop-now-button {
-    background: black;
-    color: white;
+    background: #50200C;
+    color: #F2DDCA;
     min-width: 260px;
 }
 
 .btn-black {
-    background: black;
-    color: white;
+    background: #50200C;
+    color: #F2DDCA;
 }
 
 .btn-outline-black {
-    background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    background: #F2DDCA;
+    color: #50200C !important; /* use important to override link colors for <a> elements */
+    border: 1px solid #50200C;
 }
 
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
-    color: white !important;
+    background: #50200C;
+    color: #F2DDCA !important;
 }
 
 .shop-now-button:hover,
@@ -57,20 +68,32 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    background: #50200C;
+    color: #F2DDCA;
+}
+
+.text-title {
+    color: #F2DDCA !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #21003D;
+}
+
+.text-subtitle {
+    color: #21003D;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F2DDCA;
 }
 
 .text-black {
-    color: #000 !important;
+    color: #50200C !important;
 }
 
 .border-black {
-    border: 1px solid black !important;
+    border: 1px solid #50200C !important;
 }
 
 .bg-black {
-    background: #000 !important;
+    background: #50200C !important;
 }
 
 .overlay {
@@ -79,13 +102,13 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: #F2DDCA;
 	z-index: -1;
 }
 
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
-    color: #fff !important;
+    background: #B86428 !important;
+    color: #F2DDCA !important;
 }
 
 .btt-button {
@@ -103,7 +126,7 @@ a.category-badge > span.badge:hover {
 }
 
 input[name='q']::placeholder {
-    color: #aab7c4;
+    color: #F2DDCA;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -129,7 +152,7 @@ input[name='q']::placeholder {
     height: 0; 
     border-left: 4px solid transparent;
     border-right: 4px solid transparent; 
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid #50200C;
     position: absolute;
     top: -10px;
     right: 36px;
@@ -137,7 +160,7 @@ input[name='q']::placeholder {
 
 /* Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
-    border-bottom-color: #007bff !important;
+    border-bottom-color: #50200C !important;
 }
 
 .arrow-secondary {
@@ -174,7 +197,7 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-/* -------------------------------- Media Queries */
+/* Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
@@ -187,11 +210,11 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    color: #F2DDCA; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
-    border-color: #000;
+    border-color: #50200C;
     border-radius: 3;
 }
 
@@ -208,15 +231,15 @@ input[name='q']::placeholder {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: #21003D;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #000;
-    border: 1px solid #000;
+    background-color: #50200C;
+    border: 1px solid #50200C;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -228,15 +251,14 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
-    background-color: #222;
-    border-color: #222;
+	color: #F2DDCA;
+    background-color: #50200C;
+    border-color: #50200C;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #21003D; /* text-info */
 }
-
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -249,17 +271,18 @@ input[name='q']::placeholder {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 170px;        
+
     }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 120px;
     }
 
     body {
-        height: calc(100vh - 116px);
+        height: calc(100vh - 120px);
     }
 }

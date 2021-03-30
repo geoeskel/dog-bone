@@ -16,11 +16,12 @@
     {% endblock %}
 
     {% block css %}
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <!-- Google Fonts CSS -->
         <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@200;300;400;600&display=swap" rel="stylesheet">
+        <!-- My custom CSS -->
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     {% endblock %}
 
@@ -41,7 +42,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Dog & Bone {% block extra_title %}{% endblock %}</title>
+    <title>Dog & Bone</title>
   </head>
   <body>
     <header class="container-fluid fixed-top">
@@ -50,6 +51,7 @@
                 <!-- link to 'home' -->
                 <a href="{% url 'home' %}" class="nav-link main-logo-link"> 
                     <h2 class="logo-font text-black my-0"><strong>Dog</strong> & <strong>Bone</strong></h2>
+                    <h4 class="logo-font text-black my-0">from Vom Geolupa</h4>                    
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -124,7 +126,7 @@
         </div>
         <div class="row text-center">
             <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">Not sure which food is good for your dog? Check out our <a href="{% url 'calculator' %}">Food Calculator</a></h4>
+                <h4 class="logo-font my-1">Check out our <a href="{% url 'calculator' %}">feeding guidelines</a></h4>
             </div>
         </div>
     </header>
