@@ -12,12 +12,13 @@ body {
 
 /* Navbar */
 .nav-link:hover {
-    color:#F2DDCA !important;
-    background: #50200C;
+    color:#F2DDCA !important;    
+    transition: 250ms;
 }
 .dropdown-item:hover {
     color:#F2DDCA !important; 
     background: #50200C !important;
+    transition: 450ms;
 }
 
 
