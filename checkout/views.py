@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -44,6 +46,7 @@ def cache_checkout_data(request):
             processed at the moment. Please try again later.')
         return HttpResponse(content=e, status=400)
 
+
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -51,7 +54,7 @@ def checkout(request):
     # Checking if the method is 'POST and getting the 'basket'
     if request.method == 'POST':
         basket = request.session.get('basket', {})
-        # Putting 'form_data' into dictionary so we can create its instance 
+        # Putting 'form_data' into dictionary so we can create its instance
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -64,14 +67,17 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
-        
+
         #   1.We get the 'product_id' out of the basket.
-        #   2.If its value is an integer we know we're working with an item that doesn't have sizes
+        #   2.If its value is an integer we know we're
+        #   working with an item that doesn't have sizes
         #   so the quantity will be the 'item_data'.
-        #   3.If the item has sizes, iterate through each size and create a 'line_item' accordingly.
+        #   3.If the item has sizes, iterate through each
+        #   size and create a 'line_item' accordingly.
         #   4.If a product isn't found, add an error message.
-        #   5.Delete the empty order and return the user to the shopping basket page.
-        
+        #   5.Delete the empty order and return the user to
+        #   the shopping basket page.
+
         if order_form.is_valid():
             # Needed for the order number to be passed as an argument
             # Prevent multiple save events from being executed
@@ -109,7 +115,8 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_basket'))
 
-            #   Check if the user wants to save their profile information to the
+            #   Check if the user wants to save their profile
+            #   information to the
             #   session. Then, redirect them to a 'checkout_success' page.
 
             request.session['save_info'] = 'save-info' in request.POST
@@ -177,7 +184,7 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    
+
     #   Successful checkout
     #   1.  Check if the user wants to save their information
     #   by getting that from the session
@@ -185,7 +192,7 @@ def checkout_success(request, order_number):
     #   3.  Send the 'order' to the template
     #   4.  Display the success message to the user
     #   5.  Delete user's shopping basket from the session
-    
+
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
@@ -211,7 +218,6 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. We will send \

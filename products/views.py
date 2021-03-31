@@ -9,6 +9,7 @@ from .forms import ProductForm
 
 # Create your views here.
 
+
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -21,20 +22,23 @@ def all_products(request):
     sort = None
     direction = None
 
-
     if request.GET:
-        # We check if 'sort' is in request.GET, then we set sort to 'none' 
-        # and to 'sortkey' (to apply lowercase to it for search and to preserve the original parameter),
-        # then we rename sprtkey to 'lower_name' if the user is sorting by name and annotate the list of products
-        # with a new name and check if the direction is descending to decide whether to reverse the order with '-'
-        # then we sort the products using '.order_by' model method
+        #   We check if 'sort' is in request.GET, then we set sort to 'none'
+        #   and to 'sortkey' (to apply lowercase to it for search and to
+        #   preserve the original parameter),then we rename sprtkey to
+        #   'lower_name' if the user is sorting by name and annotate
+        #   the list of products with a new name and check if the direction
+        #   is descending to decide whether to reverse the order with '-'
+        #   then we sort the products using '.order_by' model method
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-                # '__' allows us to drill into the related model so it changes the products from line 40 to: products.order_by('category__name')
+                #   '__' allows us to drill into the related model so it
+                #   changes the products from line 40 to:
+                #   products.order_by('category__name')
             if sortkey == 'category':
                 sortkey = 'category__name'
             if 'direction' in request.GET:
@@ -45,26 +49,30 @@ def all_products(request):
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            # filtering the products to check if they are in specific categoty list
+            #   filtering the products to check if they are in
+            #   specific categoty list
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't enter any search criteria")
                 return redirect(reverse('products'))
-            # using Q function; we are checking if the name OR description 
-            # equals the searched phrase. 'i' in front of 'contains' makes it case insensitive 
-            # and then we are passing the queries to the filter method in order to filter the products
+            #   using Q function; we are checking if the name OR description
+            #   equals the searched phrase. 'i' in front of 'contains' makes
+            #   it case insensitive and then we are passing the queries to
+            #   the filter method in order to filter the products
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
-        # we are returning the current sorting methodology to the template by using string formatting
+        #   we are returning the current sorting methodology to the template
+        #   by using string formatting
     current_sorting = f'{sort}_{direction}'
 
     context = {
-        # adding query to the context and returning the categories so we can use it in the template
+        #   adding query to the context and returning the categories so we can
+        #   use it in the template
         'products': products,
         'search_term': query,
         'current_categories': categories,

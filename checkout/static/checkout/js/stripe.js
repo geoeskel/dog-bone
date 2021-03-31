@@ -31,7 +31,7 @@ card.mount('#card-element');
     /* Stripe works payment intents.
 1. 	User hits the checkout page
 2. 	The checkout view will call out to stripe and create a payment intent
-	for the current amount of the shopping bag
+	for the current amount of the shopping basket
 3. 	Stripe will create it and attach a secret key for identification
 4. 	Secret key will be returned to us and we'll send it to the template
 	as the 'client_secret' variable.

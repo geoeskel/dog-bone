@@ -60,8 +60,9 @@ class Stripe_Webhook_Handler:
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-        #   To ensure the data is in the same form as what we want in our database,
-        #   replace any empty strings in the shipping details with 'None'
+        #   To ensure the data is in the same form as what we want in
+        #   our database, replace any empty strings in the shipping
+        #   details with 'None'
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
@@ -69,8 +70,9 @@ class Stripe_Webhook_Handler:
         #   Update profile information if 'save_info' was checked
         #   1. Get the username from 'intent.metadata.username'
         #   2. If the username isn't anonymous user, the user is authenticated
-        #   3. If they are authenticated, get 'UserProfile' using 'user__username'
-        #   4. Then, update the profile's shipping details  
+        #   3. If they are authenticated, get 'UserProfile'
+        #   using 'user__username'
+        #   4. Then, update the profile's shipping details
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':

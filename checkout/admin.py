@@ -24,5 +24,6 @@ class OrderAdmin(admin.ModelAdmin):
     # '-date' filters the orders chronologically, newest orderst first
     ordering = ('-date',)
 
+
 # Registering 'Order' and 'OrderAdmin'
 admin.site.register(Order, OrderAdmin)

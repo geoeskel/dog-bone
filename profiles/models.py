@@ -7,6 +7,7 @@ from django_countries.fields import CountryField
 
 # Create your models here.
 
+
 class UserProfile(models.Model):
 
     #   User profile model for default delivery information and order history
@@ -23,6 +24,7 @@ class UserProfile(models.Model):
     #   Return 'username'
     def __str__(self):
         return self.user.username
+
 
 #   When a user object is saved, create a profile if the user has been created
 #   Save the profile to update it if the user already exists
