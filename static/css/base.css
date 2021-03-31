@@ -7,7 +7,7 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #B86428;
-    font-family: 'Lato';
+    font-family: 'Blinker';
 }
 
 /* Navbar */
@@ -29,47 +29,50 @@ body {
 
 /* Cloudflare animation */
 .antext {
-  position: relative;
-  font-weight: 300;
-  font-size: 52px;
-  color: #50200C;
+    position: relative;
+    font-weight: 300;
+    font-size: 52px;
+    color: #50200C;
 }
 
 .antext .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.1em;
-  padding-right: 0.05em;
-  padding-bottom: 0.15em;
-  line-height: 1em;
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+    line-height: 1em;
 }
 
 .antext .line {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  height: 3px;
-  width: 100%;
-  background-color: #F2DDCA;
-  transform-origin: 0.5 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 3px;
+    width: 100%;
+    background-color: #F2DDCA;
+    transform-origin: 0.5 0;
 }
 
 .antext .ampersand {
-  font-family: Baskerville, serif;
-  font-style: italic;
-  font-weight: 400;
-  width: 1em;
-  margin-right: -0.1em;
-  margin-left: -0.1em;
+    font-family: Blinker, serif;  
+    font-weight: 400;
+    width: 1em;
+    margin-right: -0.1em;
+    margin-left: -0.1em;
 }
 
 .antext .letters {
-  display: inline-block;
-  opacity: 0;
+    display: inline-block;
+    opacity: 0;
 }
 
+.andsign {
+    font-weight: lighter;
+    font-size: smaller;
+}
 /* create the paw prints */
 .pad {
     width: 25px;
@@ -252,11 +255,14 @@ body {
 
 .text-title {
     color: #21003D !important;
-    text-shadow: 1px 1px 1px #F2DDCA;
+    font-weight: bolder;
+    text-shadow: 1px 1px #F2DDCA;
+
 }
 
 .text-subtitle {
     color: #21003D;
+    text-shadow: 1px 1px #F2DDCA;
 
 }
 
@@ -386,7 +392,7 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #F2DDCA; /* text-secondary */
+    color: #50200C; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
