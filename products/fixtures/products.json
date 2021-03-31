@@ -575,13 +575,13 @@
     "model": "products.product",
     "fields": {
         "sku": "pp5004230059",
-        "name": "JCPenney Home Ultra Soft Micro Fleece Blanket",
-        "description": "Super soft and undeniably cuddly, this micro-fleece blanket will keep you warm and comforted all year long.  brushed micro fleece for extra softness lightweight warmth anti-pilling treatment on one side Polyester. Washable. Imported. Twin: 60x90\" Full/Queen: 90x90\" King blanket: 108x90\"",
+        "name": "Forthglade Complete Meal Adult Dog - Brown Rice Mixed Pack",
+        "description": "3 different delicious flavours of Forthglade wet dog food for adult dogs aged 1-7, all made with brown rice with added glucosamine and chondroitin.",
         "price": 41.0,
         "category": 2,
         "rating": 4.6,
-        "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0716201503421212M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
-        "image": "DP0716201503421212M.jpg"
+        "image_url": "https://shop-cdn-m.mediazs.com/bilder/forthglade/complete/meal/adult/dog/brown/rice/mixed/pack/6/800/556494_6.jpg",
+        "image": "wetfood#1.jpg"
     }
 }, {
     "pk": 46,
