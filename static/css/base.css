@@ -348,24 +348,6 @@ input[name='q']::placeholder {
     .text-subtitle {
         font-size: 35px;
     }
-}
-
-@media (max-width: 767px) {
-    .antext {    
-        font-size: 38px;
-    }
-    .text-subtitle {
-        font-size: 25px;
-    }
-}
-
-@media (max-width: 470px) {
-    .antext {    
-        font-size: 30px;
-    }
-    .text-subtitle {
-        font-size: 20px;
-    }
     body {
         height: calc(100vh - 116px);
     }
@@ -404,6 +386,33 @@ input[name='q']::placeholder {
 
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .antext {    
+        font-size: 38px;
+    }
+    .text-subtitle {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 470px) {
+    .antext {    
+        font-size: 30px;
+    }
+    .text-subtitle {
+        font-size: 20px;
+    }    
+}
+
+@media (max-width: 321px) {
+    .antext {    
+        font-size: 25px;
+    }
+    .text-subtitle {
+        font-size: 16px;
     }
 }
 
