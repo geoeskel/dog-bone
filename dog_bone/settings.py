@@ -30,7 +30,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = ['dog-bone.herokuapp.com', 'localhost']
 
 
-# Application definition
+#   Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,18 +39,28 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  # used by the social media accounts to create a proper callback connecting via social media
+    #   used by the social media accounts to create
+    #   a proper callback connecting via social media
+    'django.contrib.sites',
     'allauth',
-    'allauth.account',  # handles login/logout/password reset
-    'allauth.socialaccount',  # handles logging via social media accounts
-    'home',  # access to created home app
-    'products',  # created products app
-    'basket',  # installed shopping basket app
-    'checkout',  # installed checkout app
+    #   handles login/logout/password reset
+    'allauth.account',
+    #   handles logging via social media accounts
+    'allauth.socialaccount',
+    #   access to created home app
+    'home',
+    #   created products app
+    'products',
+    #   installed shopping basket app
+    'basket',
+    #   installed checkout app
+    'checkout',
     'crispy_forms',
     'profiles',
-    'calculator',  # installed calculator app
-    'storages',  # django-storages package
+    #   installed calculator app
+    'calculator',
+    #   django-storages package
+    'storages',
 
 ]
 
@@ -81,16 +91,18 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                # this is required by allauth, instructions: https://django-allauth.readthedocs.io/en/latest/installation.html
-                # it allows django to access http object in my templates, e.g request.user, request.email in templates
+                #   this is required by allauth, instructions:
+                #   https://django-allauth.readthedocs.io/en/latest/installation.html
+                #   it allows django to access http object in my
+                #   templates, e.g request.user, request.email in templates
 
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # adding our context processor created in basket\templates
-                'django.template.context_processors.media', # Django media processor
+                #   adding our context processor created in basket\templates
+                'django.template.context_processors.media',
                 'basket.contexts.basket_contents',
             ],
-            # All the tags we want available in all our templates by default
+            #   All the tags we want available in all our templates by default
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
@@ -103,29 +115,36 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    # allows superusers to login to django
+    #   allows superusers to login to django
 
     'allauth.account.auth_backends.AuthenticationBackend',
-    # allows my clients to login using the e-mail address
+    #   allows my clients to login using the e-mail address
 ]
 
 SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# temporarily logs the confirmation emails to the console so I can get the confirmation links
+#   temporarily logs the confirmation emails
+#   to the console so I can get the confirmation links
 
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email' # tells allauth the authentication method we want to use
-ACCOUNT_EMAIL_REQUIRED = True # sets email requirement for the site registration
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # email is mandatory
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True # type email twice so there are no typos
-ACCOUNT_USERNAME_MIN_LENGTH = 4 # username length
-LOGIN_URL = '/accounts/login/' # login url
-LOGIN_REDIRECT_URL = '/' # url redirection after login
+#   tells allauth the authentication method we want to use
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+#   sets email requirement for the site registration
+ACCOUNT_EMAIL_REQUIRED = True
+#   email is mandatory
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+#   type email twice so there are no typos
+#   username length
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+LOGIN_URL = '/accounts/login/'
+#   url redirection after login
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'dog_bone.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+#   Database
+#   https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
@@ -140,8 +159,8 @@ else:
     }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
+#   Password validation
+#   https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -159,8 +178,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
+#   Internationalization
+#   https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -173,8 +192,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
+#   Static files (CSS, JavaScript, Images)
+#   https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
@@ -207,7 +226,7 @@ if 'USE_AWS' in os.environ:
     #   4. Then it uses the s3 custom domain setting and custom storage
     #      classes for the URL
 
-# Stripe
+#   Stripe
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
