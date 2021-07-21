@@ -1,7 +1,7 @@
 ![alt text](https://github.com/geoeskel/dog-bone/blob/master/media/wireframes/top%20image.jpg)
 
 # Dog & Bone
-Full Stack Frameworks with Django Milestone Project
+
 [Deployed website is found here](https://dog-bone.herokuapp.com/)
 
 This project aims to create a functional e-commerce website providing dog food, toys, accessories and clothes.
